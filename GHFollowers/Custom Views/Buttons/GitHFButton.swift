@@ -37,4 +37,9 @@ class GitHFButton: UIButton {
         // USE AUTO LAYOUT programatic constraints
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func set(backgroundColor:UIColor,title:String){
+        self.backgroundColor = backgroundColor
+        setTitle(title, for: .normal)
+    }
 }

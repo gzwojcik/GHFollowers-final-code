@@ -20,6 +20,8 @@ class NetworkManager {
 
     //closure, we get back list of followers or string with error
     // now with result type swift 5
+    
+    
     func getFollowers(for username: String, page:Int, completed:@escaping(Result<[Follower], GitHError>) -> Void){
         let endpoint = baseURL + "\(username)/followers?per_page=\(usersPerPage)&page=\(page)"
 
@@ -51,6 +53,48 @@ class NetworkManager {
                 //.self because it is a type
                 let followers = try decoder.decode([Follower].self, from: data)
                 completed(.success(followers))
+            } catch {
+                completed(.failure(.invalidData))
+            }
+        }
+        // this starts the network call
+        task.resume()
+
+    }
+    
+    
+    
+    func getUserInfo(for username: String, completed:@escaping(Result<User,GitHError>) -> Void){
+        let endpoint = baseURL + "\(username)"
+
+        guard let url = URL(string: endpoint)else {
+            completed(.failure(.invalidUsername))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let _ = error {
+                completed(.failure(.unableToComplete))
+                return
+            }
+
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+
+            guard let data = data else {
+                completed(.failure(.invalidData))
+                return
+            }
+
+            do {
+
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                //.self because it is a type
+                let user = try decoder.decode(User.self, from: data)
+                completed(.success(user))
             } catch {
                 completed(.failure(.invalidData))
             }
