@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7352933B2520DE5700D89B70 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352933A2520DE5700D89B70 /* Constants.swift */; };
+		735B5EAC254C8FF50098EDB7 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735B5EAB254C8FF50098EDB7 /* FavoriteCell.swift */; };
 		73BFC4FB2513E94A00B83B09 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFC4FA2513E94A00B83B09 /* UserInfoVC.swift */; };
 		73C84D7B252CF25000B6A1CE /* GitHItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C84D7A252CF25000B6A1CE /* GitHItemInfoView.swift */; };
 		73CC32A2253341C30013BAB2 /* GitHItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC32A1253341C30013BAB2 /* GitHItemInfoVC.swift */; };
@@ -15,6 +16,7 @@
 		73CC32A8253357440013BAB2 /* GitHFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC32A7253357440013BAB2 /* GitHFollowerItemVC.swift */; };
 		73CEB5D2253B40FF0046CEB6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEB5D1253B40FF0046CEB6 /* Date+Ext.swift */; };
 		73CEB5D5253B41990046CEB6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEB5D4253B41990046CEB6 /* String+Ext.swift */; };
+		73E3A0EB25489CED001D4710 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E3A0EA25489CED001D4710 /* PersistanceManager.swift */; };
 		CCDD231224EAB42E00E9C82C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD231124EAB42E00E9C82C /* UIHelper.swift */; };
 		DA0E243024AFA8B5005907D2 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E242F24AFA8B5005907D2 /* FollowerListVC.swift */; };
 		DA1B644A24CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B644924CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift */; };
@@ -37,11 +39,12 @@
 		DABF376A24BCB5750071A800 /* GitHAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABF376924BCB5750071A800 /* GitHAlertVC.swift */; };
 		DACEC1CD24C231D3009420D2 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACEC1CC24C231D3009420D2 /* UIViewController+Ext.swift */; };
 		DAF9929D24C8BD3D00FB437A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9929C24C8BD3D00FB437A /* NetworkManager.swift */; };
-		DAF992A024CA091C00FB437A /* ErrorMsgEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9929F24CA091C00FB437A /* ErrorMsgEnum.swift */; };
+		DAF992A024CA091C00FB437A /* GitHError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF9929F24CA091C00FB437A /* GitHError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7352933A2520DE5700D89B70 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		735B5EAB254C8FF50098EDB7 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		73BFC4FA2513E94A00B83B09 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		73C84D7A252CF25000B6A1CE /* GitHItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHItemInfoView.swift; sourceTree = "<group>"; };
 		73CC32A1253341C30013BAB2 /* GitHItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHItemInfoVC.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		73CC32A7253357440013BAB2 /* GitHFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHFollowerItemVC.swift; sourceTree = "<group>"; };
 		73CEB5D1253B40FF0046CEB6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		73CEB5D4253B41990046CEB6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		73E3A0EA25489CED001D4710 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		CCDD231124EAB42E00E9C82C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DA0E242F24AFA8B5005907D2 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		DA1B644924CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHSecondaryTitleLabel.swift; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		DABF376924BCB5750071A800 /* GitHAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHAlertVC.swift; sourceTree = "<group>"; };
 		DACEC1CC24C231D3009420D2 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		DAF9929C24C8BD3D00FB437A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		DAF9929F24CA091C00FB437A /* ErrorMsgEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMsgEnum.swift; sourceTree = "<group>"; };
+		DAF9929F24CA091C00FB437A /* GitHError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1B645224CF195C00CA9D46 /* FollowerCell.swift */,
+				735B5EAB254C8FF50098EDB7 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF9929C24C8BD3D00FB437A /* NetworkManager.swift */,
+				73E3A0EA25489CED001D4710 /* PersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -255,7 +261,7 @@
 		DAF9929E24CA08B900FB437A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DAF9929F24CA091C00FB437A /* ErrorMsgEnum.swift */,
+				DAF9929F24CA091C00FB437A /* GitHError.swift */,
 				CCDD231124EAB42E00E9C82C /* UIHelper.swift */,
 				7352933A2520DE5700D89B70 /* Constants.swift */,
 			);
@@ -346,7 +352,9 @@
 				DA67CC8D24A51BF60018FE53 /* AppDelegate.swift in Sources */,
 				DABF376624BCA35F0071A800 /* GitHFTitleLabel.swift in Sources */,
 				DA1B644E24CF155600CA9D46 /* GitHUserInfoHeaderVC.swift in Sources */,
+				735B5EAC254C8FF50098EDB7 /* FavoriteCell.swift in Sources */,
 				DA0E243024AFA8B5005907D2 /* FollowerListVC.swift in Sources */,
+				73E3A0EB25489CED001D4710 /* PersistanceManager.swift in Sources */,
 				73CC32A5253351600013BAB2 /* GitHRepoItemVC.swift in Sources */,
 				DA60F39A24C38B6700FC8E10 /* Follower.swift in Sources */,
 				DABF376824BCB2C90071A800 /* GitHFBodyLabel.swift in Sources */,
@@ -358,7 +366,7 @@
 				DABF376A24BCB5750071A800 /* GitHAlertVC.swift in Sources */,
 				DA1B645624CF1B2500CA9D46 /* GitHAvatarImageView.swift in Sources */,
 				DA1B644A24CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift in Sources */,
-				DAF992A024CA091C00FB437A /* ErrorMsgEnum.swift in Sources */,
+				DAF992A024CA091C00FB437A /* GitHError.swift in Sources */,
 				73CC32A2253341C30013BAB2 /* GitHItemInfoVC.swift in Sources */,
 				73BFC4FB2513E94A00B83B09 /* UserInfoVC.swift in Sources */,
 			);

@@ -17,6 +17,7 @@ class GitHItemInfoVC: UIViewController {
     // without constructor, its only a generic button in super class, not a specific one, those come in child views
     
     var user: User!
+    weak var delegate: UserInfoVCDelegate!
     
     init(user:User) {
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +35,7 @@ class GitHItemInfoVC: UIViewController {
         configureBackgroundView()
         layoutUI()
         configureStackView()
+        configureActionButton()
 
         
     }
@@ -51,6 +53,14 @@ class GitHItemInfoVC: UIViewController {
         stackView.addArrangedSubview(itemInfoViewOne)
         stackView.addArrangedSubview(itemInfoViewTwo)
         
+    }
+    
+    private func configureActionButton(){
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func actionButtonTapped(){
+        // generic super class, this has to be overwritten by children classes
     }
     
     private func layoutUI(){

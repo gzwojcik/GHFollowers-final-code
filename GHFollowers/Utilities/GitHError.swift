@@ -16,4 +16,6 @@ enum GitHError:String, Error {
     case unableToComplete = "Unable to complete request. Check your internet connection"
     case invalidResponse = "Invalid response from the server. Please try again."
     case invalidData = "The data received was invalid. Try again."
+    case unableToFavorite = "There was an error while putting this user in favorites. Try again."
+    case alreadyInFavorites = "User already have this user in favorites."
 }
