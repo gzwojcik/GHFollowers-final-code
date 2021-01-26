@@ -27,12 +27,14 @@ class GitHFBodyLabel: UILabel {
 
      private func configure(){
          // .label is black in light mode, white in darkj m
-         textColor = .secondaryLabel
-        font = UIFont.preferredFont(forTextStyle: .body)
-         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.75
-         lineBreakMode = .byWordWrapping
-         translatesAutoresizingMaskIntoConstraints = false
+        textColor                = .secondaryLabel
+        font                     = UIFont.preferredFont(forTextStyle: .body)
+        // required for disability
+        adjustsFontForContentSizeCategory = true
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor        = 0.75
+        lineBreakMode            = .byWordWrapping
+        translatesAutoresizingMaskIntoConstraints = false
 
 
      }

@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol FollowerListVCDelegate:class {
-    func didRequestFollowers(for username:String)
-}
 
 class FollowerListVC: UIViewController {
     
@@ -226,7 +223,7 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     }
 }
 
-extension FollowerListVC: FollowerListVCDelegate{
+extension FollowerListVC: UserInfoVCDelegate{
     func didRequestFollowers(for username: String) {
         // get followers for that user
         // reset everything

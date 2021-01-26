@@ -46,6 +46,7 @@ class FavoritesListVC: UIViewController {
         tableView.rowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.removeExcessCells()
         
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
     }
@@ -106,18 +107,24 @@ extension FavoritesListVC:UITableViewDataSource, UITableViewDelegate{
         
     }
     
+    
+    //deleting the cell
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else {return}
             
         let favourite   = favorites[indexPath.row]
-        favorites.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
-        // up is the local one, on this screen
         
         PersistenceManager.updateWith(favorite: favourite, actionType: .remove){ [weak self] error in
             guard let self = self else { return }
             
-            guard let error = error else {return}
+            guard let error = error else {
+                // case when there's no error
+                self.favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                // up is the local one, on this screen
+                
+                return
+            }
             self.presentGitHAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
     }

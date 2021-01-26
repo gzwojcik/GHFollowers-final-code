@@ -29,9 +29,11 @@ class GitHItemInfoView: UIView {
     }
     
     private func configure(){
-        addSubview(symbolImageView)
-        addSubview(titleLabel)
-        addSubview(countLabel)
+        addSubviews(symbolImageView, titleLabel, countLabel)
+        
+//        addSubview(symbolImageView)
+//        addSubview(titleLabel)
+//        addSubview(countLabel)
         
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         symbolImageView.contentMode = .scaleAspectFill

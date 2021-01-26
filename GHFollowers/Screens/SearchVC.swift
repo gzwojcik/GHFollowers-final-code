@@ -13,12 +13,15 @@ class SearchVC: UIViewController {
     let logoImageView = UIImageView()
     let usernameTextField = GitHFTextField()
     let callToActionButton = GitHFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    var logoImageViewTopConstraint:NSLayoutConstraint!
+    
 
     var isUsernameEntered:Bool { return !usernameTextField.text!.isEmpty }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubviews(logoImageView,usernameTextField,callToActionButton)
         //to run the view
         configureLogoImageView()
         configureTextField()
@@ -35,7 +38,8 @@ class SearchVC: UIViewController {
     //func to dissmiss the keyboard
 
     func createDissmissKeybTabGesture(){
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing)) // which view responds to the dissmiss of the keyboard
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing)) // which view responds to the dissmiss of the keyboard
+        // self.view is not required
         view.addGestureRecognizer(tap)
     }
 
@@ -54,13 +58,21 @@ class SearchVC: UIViewController {
 
     func configureLogoImageView(){
         // like dragging an element on to a storyboard
-        view.addSubview(logoImageView)
+        
+       // view.addSubview(logoImageView)
+        
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")! // <- wrzucic do zmiennej
+       // logoImageView.image = UIImage(named: "gh-logo")! // <- wrzucic do zmiennej
+        logoImageView.image = Images.ghLogo
+        
+        let topConstraintConstant:CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+        
+        logoImageViewTopConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)
+        logoImageViewTopConstraint.isActive = true
 
         NSLayoutConstraint.activate([
-            // usually 4 constraints
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant:80),
+            // usually 4 constraints, done higher
+            //logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant:80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
@@ -68,7 +80,7 @@ class SearchVC: UIViewController {
     }
 
     func configureTextField(){
-       view.addSubview(usernameTextField)
+       //view.addSubview(usernameTextField)
         usernameTextField.delegate = self
         // must add the above to listen
 
@@ -84,7 +96,7 @@ class SearchVC: UIViewController {
     }
 
     func configureCallToActionButton(){
-        view.addSubview(callToActionButton)
+      // view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
 
         

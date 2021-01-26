@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7305D23025BDE565008F96E8 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305D22F25BDE565008F96E8 /* UITableView+Ext.swift */; };
+		734A8CAD255AFECD000BFF59 /* GitHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A8CAC255AFECD000BFF59 /* GitHTabBarController.swift */; };
 		7352933B2520DE5700D89B70 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352933A2520DE5700D89B70 /* Constants.swift */; };
 		735B5EAC254C8FF50098EDB7 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735B5EAB254C8FF50098EDB7 /* FavoriteCell.swift */; };
 		73BFC4FB2513E94A00B83B09 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFC4FA2513E94A00B83B09 /* UserInfoVC.swift */; };
@@ -17,6 +19,7 @@
 		73CEB5D2253B40FF0046CEB6 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEB5D1253B40FF0046CEB6 /* Date+Ext.swift */; };
 		73CEB5D5253B41990046CEB6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CEB5D4253B41990046CEB6 /* String+Ext.swift */; };
 		73E3A0EB25489CED001D4710 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E3A0EA25489CED001D4710 /* PersistanceManager.swift */; };
+		73F2860E256AE1A20001E817 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2860D256AE1A20001E817 /* UIView+Ext.swift */; };
 		CCDD231224EAB42E00E9C82C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDD231124EAB42E00E9C82C /* UIHelper.swift */; };
 		DA0E243024AFA8B5005907D2 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0E242F24AFA8B5005907D2 /* FollowerListVC.swift */; };
 		DA1B644A24CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B644924CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift */; };
@@ -43,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7305D22F25BDE565008F96E8 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		734A8CAC255AFECD000BFF59 /* GitHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHTabBarController.swift; sourceTree = "<group>"; };
 		7352933A2520DE5700D89B70 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		735B5EAB254C8FF50098EDB7 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		73BFC4FA2513E94A00B83B09 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		73CEB5D1253B40FF0046CEB6 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		73CEB5D4253B41990046CEB6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		73E3A0EA25489CED001D4710 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		73F2860D256AE1A20001E817 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		CCDD231124EAB42E00E9C82C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DA0E242F24AFA8B5005907D2 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		DA1B644924CF120C00CA9D46 /* GitHSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHSecondaryTitleLabel.swift; sourceTree = "<group>"; };
@@ -91,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		734A8CAB255AFE1F000BFF59 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				734A8CAC255AFECD000BFF59 /* GitHTabBarController.swift */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
 		73CC32AA253358580013BAB2 /* ItemInfoVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +182,7 @@
 		DA60F39524C386DC00FC8E10 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				734A8CAB255AFE1F000BFF59 /* TabBarControllers */,
 				DA8A99222509036C00A37410 /* Views */,
 				DA1B645424CF1ABD00CA9D46 /* ImageViews */,
 				DA1B645124CF185600CA9D46 /* Cells */,
@@ -185,6 +200,8 @@
 				DACEC1CC24C231D3009420D2 /* UIViewController+Ext.swift */,
 				73CEB5D1253B40FF0046CEB6 /* Date+Ext.swift */,
 				73CEB5D4253B41990046CEB6 /* String+Ext.swift */,
+				73F2860D256AE1A20001E817 /* UIView+Ext.swift */,
+				7305D22F25BDE565008F96E8 /* UITableView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Hime Electronics Int.";
 				TargetAttributes = {
 					DA67CC8824A51BF60018FE53 = {
@@ -339,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73CC32A8253357440013BAB2 /* GitHFollowerItemVC.swift in Sources */,
+				7305D23025BDE565008F96E8 /* UITableView+Ext.swift in Sources */,
 				DA60F39C24C38CB400FC8E10 /* User.swift in Sources */,
 				DA4272D824A55F2000F6A881 /* FavoritesListVC.swift in Sources */,
 				73CEB5D5253B41990046CEB6 /* String+Ext.swift in Sources */,
@@ -355,11 +373,13 @@
 				735B5EAC254C8FF50098EDB7 /* FavoriteCell.swift in Sources */,
 				DA0E243024AFA8B5005907D2 /* FollowerListVC.swift in Sources */,
 				73E3A0EB25489CED001D4710 /* PersistanceManager.swift in Sources */,
+				734A8CAD255AFECD000BFF59 /* GitHTabBarController.swift in Sources */,
 				73CC32A5253351600013BAB2 /* GitHRepoItemVC.swift in Sources */,
 				DA60F39A24C38B6700FC8E10 /* Follower.swift in Sources */,
 				DABF376824BCB2C90071A800 /* GitHFBodyLabel.swift in Sources */,
 				DA1B645324CF195C00CA9D46 /* FollowerCell.swift in Sources */,
 				DAF9929D24C8BD3D00FB437A /* NetworkManager.swift in Sources */,
+				73F2860E256AE1A20001E817 /* UIView+Ext.swift in Sources */,
 				73CEB5D2253B40FF0046CEB6 /* Date+Ext.swift in Sources */,
 				DA8CE9A024ABC4DF0041FB55 /* GitHFTextField.swift in Sources */,
 				DA67CC8F24A51BF60018FE53 /* SceneDelegate.swift in Sources */,
@@ -412,6 +432,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -436,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -472,6 +493,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -490,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

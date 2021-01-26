@@ -42,6 +42,8 @@ class GitHAlertVC: UIViewController {
 
         //original sean ver without a constant
         //view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
+        
+        view.addSubviews(containerView, titleLabel, actionButton, messageLabel)
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -53,7 +55,7 @@ class GitHAlertVC: UIViewController {
     
 
     func configureContainerView() {
-        view.addSubview(containerView)
+        //view.addSubview(containerView)
         containerView.backgroundColor = .systemBackground
         containerView.layer.cornerRadius = 16
         containerView.layer.borderWidth = 2
@@ -72,7 +74,7 @@ class GitHAlertVC: UIViewController {
 
     func configureTitleLabel(){
         //adding to the subview
-        containerView.addSubview(titleLabel)
+        //containerView.addSubview(titleLabel)
         // nil coalescing, unwrap an optional
         titleLabel.text = alertTitle ?? "Sth went wrong, the default"
 
@@ -88,7 +90,7 @@ class GitHAlertVC: UIViewController {
     }
 
     func configureActionButton(){
-        containerView.addSubview(actionButton)
+        //containerView.addSubview(actionButton)
         actionButton.setTitle(buttonTitle ?? "Ok", for: .normal)
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
 
@@ -103,7 +105,7 @@ class GitHAlertVC: UIViewController {
     }
 
     func configureMessageLabel(){
-        containerView.addSubview(messageLabel)
+        //containerView.addSubview(messageLabel)
         messageLabel.text = message ?? "Unable to complete request"
         messageLabel.numberOfLines = 4
 

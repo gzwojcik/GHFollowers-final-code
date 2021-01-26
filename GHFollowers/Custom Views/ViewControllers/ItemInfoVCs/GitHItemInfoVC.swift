@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol  ItemInfoVCDelegate:class {
+    func didTapGitHubProfile(for user:User)
+    func didTapGetFollowers(for user:User)
+    
+}
+
 class GitHItemInfoVC: UIViewController {
 
     let stackView       = UIStackView()
@@ -17,7 +23,7 @@ class GitHItemInfoVC: UIViewController {
     // without constructor, its only a generic button in super class, not a specific one, those come in child views
     
     var user: User!
-    weak var delegate: UserInfoVCDelegate!
+    
     
     init(user:User) {
         super.init(nibName: nil, bundle: nil)
@@ -64,8 +70,15 @@ class GitHItemInfoVC: UIViewController {
     }
     
     private func layoutUI(){
-        view.addSubview(stackView)
-        view.addSubview(actionButton)
+        
+        // using UIView extension
+        
+        view.addSubviews(stackView, actionButton)
+        
+        // old way, just for reference
+        
+//        view.addSubview(stackView)
+//        view.addSubview(actionButton)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding: CGFloat = 20

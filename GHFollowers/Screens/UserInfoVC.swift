@@ -9,12 +9,11 @@
 import UIKit
 
 
-
-protocol  UserInfoVCDelegate:class {
-    func didTapGitHubProfile(for user:User)
-    func didTapGetFollowers(for user:User)
-    
+protocol UserInfoVCDelegate:class {
+    func didRequestFollowers(for username:String)
 }
+
+
 
 class UserInfoVC: UIViewController {
     
@@ -25,7 +24,7 @@ class UserInfoVC: UIViewController {
     var itemViews:[UIView] = []
     
     var username: String!
-    weak var delegate:FollowerListVCDelegate!
+    weak var delegate:UserInfoVCDelegate!
     
 
     override func viewDidLoad() {
@@ -120,7 +119,7 @@ class UserInfoVC: UIViewController {
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 180),
+            headerView.heightAnchor.constraint(equalToConstant: 210),
             
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOne.heightAnchor.constraint(equalToConstant:itemHeight),
@@ -129,7 +128,7 @@ class UserInfoVC: UIViewController {
             itemViewTwo.heightAnchor.constraint(equalToConstant:itemHeight),
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-            dateLabel.heightAnchor.constraint(equalToConstant: 18)
+            dateLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -148,30 +147,63 @@ class UserInfoVC: UIViewController {
  
 }
 
-extension UserInfoVC: UserInfoVCDelegate {
+extension UserInfoVC: GitHRepoItemVCDelegate {
     func didTapGitHubProfile(for user: User) {
         // show Safari VC
         guard let url = URL(string: user.htmlUrl) else {
             presentGitHAlertOnMainThread(title: "Invalid URL", message: "This user's url is invalid.", buttonTitle: "Ok")
             return
         }
-        
+
         presentSafariVC(with: url)
     }
     
+    
+}
+
+extension UserInfoVC: GitHFollowerItemVCDelegate{
     func didTapGetFollowers(for user: User) {
         //dissmiss this vc
         //get follower list for the new user
-        
+
         guard user.followers != 0 else {
             presentGitHAlertOnMainThread(title: "No followers", message: "This user has no followes", buttonTitle: "Ok")
             return
         }
         delegate.didRequestFollowers(for: user.login)
         dismssVC()
-        
+
     }
     
     
-    
 }
+
+// it used it be in 1 delegate
+
+//extension UserInfoVC: ItemInfoVCDelegate {
+//    func didTapGitHubProfile(for user: User) {
+//        // show Safari VC
+//        guard let url = URL(string: user.htmlUrl) else {
+//            presentGitHAlertOnMainThread(title: "Invalid URL", message: "This user's url is invalid.", buttonTitle: "Ok")
+//            return
+//        }
+//
+//        presentSafariVC(with: url)
+//    }
+//
+//    func didTapGetFollowers(for user: User) {
+//        //dissmiss this vc
+//        //get follower list for the new user
+//
+//        guard user.followers != 0 else {
+//            presentGitHAlertOnMainThread(title: "No followers", message: "This user has no followes", buttonTitle: "Ok")
+//            return
+//        }
+//        delegate.didRequestFollowers(for: user.login)
+//        dismssVC()
+//
+//    }
+//
+//
+//
+//}

@@ -31,8 +31,10 @@ class GitHEmptyStateView: UIView {
     }
 
     private func configure (){
-        addSubview(messageLabel)
-        addSubview(logoImageView)
+        addSubviews(messageLabel, logoImageView)
+        
+//        addSubview(messageLabel)
+//        addSubview(logoImageView)
 
         messageLabel.numberOfLines = 3
         messageLabel.textColor     = .secondaryLabel
